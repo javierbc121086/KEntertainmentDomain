@@ -33,3 +33,8 @@ Pod::Spec.new do |spec|
   spec.swift_versions = "5.1.3"
 
 end
+
+# 
+# pod repo push KEntertainmentDomainSpec KEntertainmentDomain.podspec --allow-warnings --private --verbose
+# git tag -a 0.0.1 -m "Pod V0.0.1"
+# git push --tags
