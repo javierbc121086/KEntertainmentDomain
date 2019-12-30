@@ -10,6 +10,9 @@
 		129D8DE323B9A0720016664D /* KEntertainmentDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D8DD923B9A0720016664D /* KEntertainmentDomain.framework */; };
 		129D8DE823B9A0720016664D /* KEntertainmentDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D8DE723B9A0720016664D /* KEntertainmentDomainTests.swift */; };
 		129D8DEA23B9A0720016664D /* KEntertainmentDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 129D8DDC23B9A0720016664D /* KEntertainmentDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		129D8E3D23B9A17C0016664D /* KHttpRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D8E3C23B9A17C0016664D /* KHttpRequestType.swift */; };
+		129D8E4023B9A2240016664D /* KTvModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D8E3F23B9A2240016664D /* KTvModel.swift */; };
+		129D8E4223B9A27A0016664D /* KMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D8E4123B9A27A0016664D /* KMovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		129D8DE223B9A0720016664D /* KEntertainmentDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KEntertainmentDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		129D8DE723B9A0720016664D /* KEntertainmentDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEntertainmentDomainTests.swift; sourceTree = "<group>"; };
 		129D8DE923B9A0720016664D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		129D8E3C23B9A17C0016664D /* KHttpRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KHttpRequestType.swift; sourceTree = "<group>"; };
+		129D8E3F23B9A2240016664D /* KTvModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTvModel.swift; sourceTree = "<group>"; };
+		129D8E4123B9A27A0016664D /* KMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 		129D8DDB23B9A0720016664D /* KEntertainmentDomain */ = {
 			isa = PBXGroup;
 			children = (
+				129D8E3E23B9A2090016664D /* Model */,
+				129D8E3B23B9A1640016664D /* Type */,
 				129D8DDC23B9A0720016664D /* KEntertainmentDomain.h */,
 				129D8DDD23B9A0720016664D /* Info.plist */,
 			);
@@ -84,6 +92,23 @@
 				129D8DE923B9A0720016664D /* Info.plist */,
 			);
 			path = KEntertainmentDomainTests;
+			sourceTree = "<group>";
+		};
+		129D8E3B23B9A1640016664D /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				129D8E3C23B9A17C0016664D /* KHttpRequestType.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		129D8E3E23B9A2090016664D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				129D8E3F23B9A2240016664D /* KTvModel.swift */,
+				129D8E4123B9A27A0016664D /* KMovieModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +173,7 @@
 				TargetAttributes = {
 					129D8DD823B9A0720016664D = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					129D8DE123B9A0720016664D = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129D8E3D23B9A17C0016664D /* KHttpRequestType.swift in Sources */,
+				129D8E4023B9A2240016664D /* KTvModel.swift in Sources */,
+				129D8E4223B9A27A0016664D /* KMovieModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +369,7 @@
 		129D8DEE23B9A0720016664D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6A5X7JBF46;
@@ -348,6 +378,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KEntertainmentDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,14 +387,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.gipsyhub.KEntertainmentDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		129D8DEF23B9A0720016664D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6A5X7JBF46;
@@ -372,6 +406,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KEntertainmentDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,14 +415,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.gipsyhub.KEntertainmentDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		129D8DF123B9A0720016664D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A5X7JBF46;
 				INFOPLIST_FILE = KEntertainmentDomainTests/Info.plist;
@@ -406,6 +443,7 @@
 		129D8DF223B9A0720016664D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A5X7JBF46;
 				INFOPLIST_FILE = KEntertainmentDomainTests/Info.plist;
