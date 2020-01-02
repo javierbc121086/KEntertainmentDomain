@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "KEntertainmentDomain"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Dependencia encargada de contener la definición del negocio Kavak Entretainment"
   
 
@@ -36,5 +36,5 @@ end
 
 # 
 # pod repo push KEntertainmentDomainSpec KEntertainmentDomain.podspec --allow-warnings --private --verbose
-# git tag -a 0.0.1 -m "Pod V0.0.1"
+# git tag -a 0.0.2 -m "Pod V0.0.2"
 # git push --tags
